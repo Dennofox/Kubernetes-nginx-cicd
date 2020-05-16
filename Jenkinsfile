@@ -4,15 +4,21 @@ pipeline {
     stage('Shell test') {
       steps {
         sh 'echo "Hello Quentin"'
-        sh '''
-                     echo "Multiline shell steps works too"
-                     ls -lah
-                 '''
       }
     }
-	stage('Build') {
-		  steps {
-			sh './run_docker.sh'
+    stage('Build Docker image') {
+	  steps {
+		sh './run_docker.sh'
+	  }
+	}
+    stage('Upload Docker image') {
+	  steps {
+		sh './upload_docker.sh'
+	  }
+	}
+    stage('Update Kubernetes cluster with new image') {
+	  steps {
+		sh './run_kubernetes.sh'
 	  }
 	}
   }
