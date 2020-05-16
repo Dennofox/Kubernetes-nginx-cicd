@@ -1,0 +1,1 @@
+eksctl create cluster --name capstone --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --ssh-access --ssh-public-key capstone.pub --managed
