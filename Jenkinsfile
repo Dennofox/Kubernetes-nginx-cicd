@@ -9,6 +9,11 @@ pipeline {
         sh 'echo "Hello Quentin"'
       }
     }
+    stage('Lint') {
+      steps {
+        sh 'hadolint Dockerfile'
+      }
+    }
     stage('Build Docker image') {
 	  steps {
 		sh './run_docker.sh'
@@ -21,10 +26,6 @@ pipeline {
 	}
     stage('Update Kubernetes cluster with new image') {
 	  steps {
-		sh 'echo $PATH'
-		sh 'export PATH=$PATH:/usr/local/bin/'
-		sh 'echo $PATH'
-		sh 'which aws'
 		sh './run_kubernetes.sh'
 	  }
 	}
