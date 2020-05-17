@@ -18,10 +18,7 @@ pipeline {
 	}
     stage('Update Kubernetes cluster with new image') {
 	  steps {
-		sh 'export PATH=$PATH:$HOME/bin'
-		sh 'export KUBECONFIG=$KUBECONFIG:~/.kube/config-capstone'
-		sh 'export export PATH=$PATH:/usr/local/bin'
-		sh 'export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/aws-cli/v2/2.0.13/dist/'
+		sh 'which kubectl'
 		sh './run_kubernetes.sh'
 	  }
 	}
