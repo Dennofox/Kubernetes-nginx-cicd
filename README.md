@@ -10,3 +10,4 @@ It includes :
 - upload_docker.sh : a shell script to upload the newly created image to Amazon container registry (ECR)
 - run_kubernetes.sh : a shell script to update the Kubernetes deployment with the new image in a rolling update
 - Jenkinsfile : a file describing the describing the CICD pipeline launched to automatically lint the code and then build, upload and deploy new images
+- HTML : a folder containing the HTML code for nginx
