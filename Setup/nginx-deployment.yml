@@ -17,5 +17,6 @@ spec:
       containers:
       - name: nginx
         image: 643968575852.dkr.ecr.eu-west-2.amazonaws.com/udacity-captsone
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
