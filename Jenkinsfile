@@ -18,7 +18,7 @@ pipeline {
 	}
     stage('Update Kubernetes cluster with new image') {
 	  steps {
-		sh 'which kubectl'
+		sh 'which aws'
 		sh './run_kubernetes.sh'
 	  }
 	}
