@@ -19,6 +19,8 @@ pipeline {
     stage('Update Kubernetes cluster with new image') {
 	  steps {
 		sh 'echo $PATH'
+		sh 'export PATH=$PATH:/usr/local/bin/'
+		sh 'echo $PATH'
 		sh 'which aws'
 		sh './run_kubernetes.sh'
 	  }
