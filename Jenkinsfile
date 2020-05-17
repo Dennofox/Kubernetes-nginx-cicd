@@ -18,6 +18,7 @@ pipeline {
 	}
     stage('Update Kubernetes cluster with new image') {
 	  steps {
+		sh 'source /var/lib/jenkins/.bashrc'
 		sh './run_kubernetes.sh'
 	  }
 	}
